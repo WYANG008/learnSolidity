@@ -1,0 +1,32 @@
+{
+  "name": "pet-shop",
+  "version": "1.0.0",
+  "description": "",
+  "main": "truffle.js",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "dev": "lite-server",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "ganache-cli --defaultBalanceEther 1000 --gasLimit 7990000 --port 8545 -a 20 -m \"concert load couple harbor equip island argue ramp clarify fence smart topic\"",
+    "deploy": "truffle.cmd migrate --reset --compile-all"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "lite-server": "^2.3.0",
+    "copyfiles": "^2.1.0",
+    "cross-env": "^5.2.0",
+    "eslint": "^5.6.0",
+    "eslint-plugin-mocha": "^5.2.0",
+    "ganache-cli": "^6.1.8",
+    "rimraf": "^2.6.2",
+    "solidity-coverage": "^0.5.11",
+    "solium": "^1.1.8",
+    "truffle": "^4.1.14"
+  },
+  "dependencies": {
+    "web3": "^1.0.0-beta.36"
+  }
+}
