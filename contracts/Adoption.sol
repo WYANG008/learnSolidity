@@ -11,7 +11,7 @@ contract Adoption is Ownable {
         uint price;
         string location;
     }
-    address[16] public adopters;
+    address[] public pets;
     mapping(address => bool) public existingPets;
 
     event Adoption(uint petId, address adoptor);
@@ -20,7 +20,7 @@ contract Adoption is Ownable {
     function adopt(uint petId) public returns (uint) {
         require(petId >= 0 && petId <= 15);
 
-        adopters[petId] = msg.sender;
+        pets[petId] = msg.sender;
         emit Adoption(petId, msg.sender);
         return petId;
     }
@@ -36,9 +36,9 @@ contract Adoption is Ownable {
 
     /*****************HOME WORK***************** */
     /**Implement Below Functions */
-    // 0. each pet should have age, breed, location and price
+
     // 1. make adopt payable, can adopt with value more than price
-    // 2. unAdopt a pet
+    // 2. refound a pet
     // 3. add contract owner
     // 4. owner can remove a pet from the adopterList
     // 5. owner can register a pet into the adopterList

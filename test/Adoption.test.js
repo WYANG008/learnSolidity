@@ -15,7 +15,7 @@ contract('Beethoven', accounts => {
         before(initContracts);
         it("should adopt pet", async () => {
             let tx = await contract.adopt(0);
-            assert.equal(tx.logs.length , 1, 'wrong num of events');
+            assert.equal(tx.logs.length , 2, 'wrong num of events');
             assert.isTrue(tx.logs[0].event === 'Adoption', 'wrong event Name');
         })
     });
