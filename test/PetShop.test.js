@@ -1,17 +1,17 @@
-const Adoption = artifacts.require('../contracts/Adoption');
+const PetShop = artifacts.require('../contracts/PetShop');
 
-contract('Beethoven', accounts => {
+contract('PetShop', accounts => {
     let creator = accounts[0];
     let contract;
     const initContracts = async () => {
-		contract = await Adoption.new(
+		contract = await PetShop.new(
 			{
 				from: creator
 			}
         );
     }
 
-    describe('adopt', () => {
+    describe('purchase', () => {
         before(initContracts);
         it("should adopt pet", async () => {
             let tx = await contract.adopt(0);
