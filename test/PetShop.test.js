@@ -4,7 +4,7 @@ contract('PetShop', accounts => {
     let creator = accounts[0];
     let contract;
     const initContracts = async () => {
-		contract = await PetShop.new(
+		contract = await PetShop.new(1,10,
 			{
 				from: creator
 			}
@@ -13,10 +13,11 @@ contract('PetShop', accounts => {
 
     describe('purchase', () => {
         before(initContracts);
-        it("should adopt pet", async () => {
-            let tx = await contract.adopt(0);
-            assert.equal(tx.logs.length , 2, 'wrong num of events');
-            assert.isTrue(tx.logs[0].event === 'Adoption', 'wrong event Name');
-        })
+        it("should purchase pet", async () => {
+            let tx = await contract.purchase(0, {from: creator, value: 2000000000000000000});
+            console.log(tx);
+            assert.equal(tx.logs.length , 1, 'wrong num of events');
+            assert.isTrue(tx.logs[0].event === 'Purchase', 'wrong event Name');
+        });
     });
 });

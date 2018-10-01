@@ -7,5 +7,5 @@ module.exports = function(deployer) {
   deployer.deploy(SafeMath);
   deployer.link(Ownable, PetShop);
   deployer.link(SafeMath, PetShop);
-  deployer.deploy(PetShop);
+  deployer.deploy(PetShop,1,10);
 };
