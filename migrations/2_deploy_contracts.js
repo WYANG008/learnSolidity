@@ -1,4 +1,4 @@
-var PetShop = artifacts.require("PetShop");
+var PetShop = artifacts.require("./PetShop.sol");
 var Ownable = artifacts.require("./Ownable.sol");
 var SafeMath = artifacts.require("./SafeMath.sol");
 
